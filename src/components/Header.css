@@ -1,0 +1,123 @@
+:root{
+    --search_width: 20rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#imgWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.searchLayout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2em;
+    flex-wrap: wrap;
+}
+
+
+
+._box{
+    width: var(--search_width);
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding:5px;
+    margin:5px;
+    background-color: #f5f5f5;
+    /*position: relative;
+    /*right: 50%;
+    left: calc(50% - 50px - var(--search_width)/2);
+    /*background-color: green;*/
+    
+    
+}
+
+._box:focus{
+    outline:none;
+    border:2px solid black;
+    border-radius: 20px;
+}
+
+.search{
+    height: 40px;
+    width: calc(var(--search_width)/2);
+    margin-left: 10px;
+    border-radius: 20px;
+    border:none;
+    background-color: lightsteelblue;
+    color: black;
+    font-size: 100%;
+    margin: 5px;
+}
+.search:hover{
+    background-color: #8DC9FE;
+    
+    transition: background-color linear 0.1s;
+    /*transition: background-color*/ 
+    
+}
+.search:focus{
+    border:2px solid black;
+    border-radius: 20px;
+    outline:none;
+}
+
+
+.mainBody{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.fGrow{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color:lightcyan;
+    border:5px solid lightcyan;
+    border-radius: 15px;
+    
+    
+}
+.item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow:1;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    
+}
+
+.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner{
+        
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color:lightcyan;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    flex-wrap: wrap;
+        
+    
+}
+
