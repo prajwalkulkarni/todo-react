@@ -2,6 +2,10 @@
     --search_width: 20rem;
 }
 
+body{
+    background-color: rgb(248, 248, 248);
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -12,6 +16,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: white;
+    border: 2px 1px 2px 1px solid lightgrey;
+    top:0;
+    position: sticky;
 }
 
 .searchLayout{
@@ -31,7 +39,7 @@
     border-radius: 20px;
     padding:5px;
     margin:5px;
-    background-color: #f5f5f5;
+    
     /*position: relative;
     /*right: 50%;
     left: calc(50% - 50px - var(--search_width)/2);
@@ -81,22 +89,24 @@
 }
 
 .fGrow{
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
-    flex-grow: 1;
-    background-color:lightcyan;
-    border:5px solid lightcyan;
-    border-radius: 15px;
+    /*flex-grow: 1;
+    background-color:rgb(211, 218, 255);*/
+    
+    margin: 5px;
+    border-radius: 20px;
     
     
 }
 .item{
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
-    flex-grow:1;
+    /*flex-grow:1;
+    border:5px solid rgb(211, 218, 255);*/
     font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
     padding: 5px;
     
 }
@@ -104,7 +114,11 @@
 .right{
     display: flex;
     flex-direction: row;
+    border-radius: 15px;
+    flex-wrap: wrap;
     justify-content: center;
+    flex-grow: 1;
+    background-color:#fccbcb;
 }
 
 .inner{
@@ -112,8 +126,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    background-color:lightcyan;
-    justify-content: center;
+    border-radius:15px;
     align-items: center;
     padding-top: 20px;
     flex-wrap: wrap;
