@@ -15,7 +15,7 @@ export default function CircularProgressWithLabel(props) {
           alignItems="center"
           justifyContent="center"
         >
-          <Typography variant="caption" component="div" color="textSecondary" variant="h3">{isNaN(props.value)?'':`${Math.round(
+          <Typography  component="div" color="textSecondary" variant="h3">{isNaN(props.value)?'':`${Math.round(
             props.value,
           )}%`}</Typography>
         </Box>
