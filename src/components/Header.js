@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import "./Header.css"
-import logo from '../logo192.png';
+import logo from "../logo192.png"
 import DeleteIcon from '@material-ui/icons/Delete';
 import { IconButton } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -11,9 +12,9 @@ import CircularProgressWithLabel from './CircularProgressWithLabel';
 import Card from './Card'
 
 export default function Header(props) {
-    const [item, setCurrentItem] = useState(null);
+    const [item, setCurrentItem] = useState("");
     const [count, setCount] = useState(0);
-    const [checked, setChecked] = useState(false)
+    //const [checked, setChecked] = useState(false)
     const [progress, setProgress] = useState(0);
     const [items, ItemsList] = useState([])
     const [val, keyVal] = useState(0)
@@ -37,7 +38,7 @@ export default function Header(props) {
     function search() {
         //alert(song)
         if (item !== null && item.trim().length > 0) {
-            ItemsList([...items, { key: val, value: item, checked: checked }])
+            ItemsList([...items, { key: val, value: item, checked: false }])
             keyVal(p => p + 1)
             //alert(val)
             setCurrentItem("")
@@ -70,7 +71,7 @@ export default function Header(props) {
     function totalChecked(isChecked, curr) {
         //alert(isChecked)
         //setChecked(isChecked)
-        let idx = items.findIndex(e => e.key == curr)
+        let idx = items.findIndex(e => e.key === curr)
         items[idx].checked = isChecked
         if (isChecked) {
             setCount(p => p + 1)
@@ -95,7 +96,7 @@ export default function Header(props) {
         />
 
         <div id="imgWrapper">
-            <img src={logo} height="100" width="100" />
+            <img src={logo} height="100" width="100" alt="header-logo" />
         </div>
 
         <div className="searchLayout">
