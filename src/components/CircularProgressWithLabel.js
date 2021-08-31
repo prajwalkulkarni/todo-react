@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 export default function CircularProgressWithLabel(props) {
     return (
       <Box position="relative" display="inline-flex">
-        <CircularProgress variant="determinate" {...props} size="10rem"/>
+        <CircularProgress variant="determinate" {...props} size="10rem" style={{color:"#00695f"}}/>
         <Box
           top={0}
           left={0}

@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(224, 222, 222);
 }
 
 .container{
@@ -13,12 +13,12 @@ body{
 }
 
 #imgWrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: white;
+    display: block;
+    text-align: center;
+    background-color: #00695f;
     border: 2px 1px 2px 1px solid lightgrey;
     top:0;
+    z-index: 1000;
     position: sticky;
 }
 
@@ -35,7 +35,7 @@ body{
 ._box{
     width: var(--search_width);
     height: 40px;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 20px;
     padding:5px;
     margin:5px;
@@ -60,13 +60,13 @@ body{
     margin-left: 10px;
     border-radius: 20px;
     border:none;
-    background-color: lightsteelblue;
-    color: black;
+    background-color: #009688;
+    color: white;
     font-size: 100%;
     margin: 5px;
 }
 .search:hover{
-    background-color: #8DC9FE;
+    background-color: #33ab9f;
     
     transition: background-color linear 0.1s;
     /*transition: background-color*/ 
@@ -111,6 +111,11 @@ body{
     
 }
 
+.fontColor{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .right{
     display: flex;
     flex-direction: row;
@@ -118,7 +123,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
-    background-color:#fccbcb;
+    
 }
 
 .inner{
@@ -132,5 +137,14 @@ body{
     flex-wrap: wrap;
         
     
+}
+
+.rightInner{
+    border-radius: 15px;
+    background-color:#20bf55;
+    flex-grow: 1;
+background-image:linear-gradient(315deg, #20bf55 0%, #33ab9f 74%);
+
+
 }
 

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import "./Header.css"
-import logo from "../logo192.png"
+import logo from "../logo100.png"
 import DeleteIcon from '@material-ui/icons/Delete';
 import { IconButton } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -10,6 +10,10 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import Divider from '@material-ui/core/Divider';
 import CircularProgressWithLabel from './CircularProgressWithLabel';
 import Card from './Card'
+import CustomCheckbox from './CustomCheckBox';
+
+
+
 
 export default function Header(props) {
     const [item, setCurrentItem] = useState("");
@@ -42,6 +46,8 @@ export default function Header(props) {
             keyVal(p => p + 1)
             //alert(val)
             setCurrentItem("")
+            document.querySelector("input").focus()
+
         }
         else {
             //alert("Run")
@@ -101,12 +107,12 @@ export default function Header(props) {
 
         <div className="searchLayout">
             <input type="search" placeholder="Add item" value={item} className="_box" onChange={(e) => setCurrentItem(e.target.value)} />
-            <button onClick={search} className="search">Add</button>
+            <button onClick={search} className="search"><b>Add</b></button>
         </div>
 
         <div className="mainBody">
             <Card className="fGrow">
-                
+
                 {items.length > 0 ? <ul type="none" style={{ padding: "10px" }}>
 
                     {items.map(obj => {
@@ -118,8 +124,9 @@ export default function Header(props) {
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" onChange={(e) => totalChecked(e.target.checked, obj.key)
-                                        } />
+
+                                        <CustomCheckbox onChange={(e) => totalChecked(e.target.checked, obj.key)} />
+
                                         <IconButton onClick={() => { rmItem(obj.key, obj.checked) }}>
                                             <DeleteIcon />
                                         </IconButton>
@@ -139,9 +146,9 @@ export default function Header(props) {
                 </ul> :
 
                     <div className="inner">
-                        <h1>To-do List</h1>
-                        <HourglassEmptyIcon style={{ fontSize: 100 }} />
-                        <p>Todo list empty &nbsp;&nbsp;</p>
+                        <h1 className="fontColor">To-do List</h1>
+                        <HourglassEmptyIcon style={{ fontSize: 100, color: "black" }} />
+                        <p className="fontColor">Todo list empty &nbsp;&nbsp;</p>
 
                     </div>
 
@@ -149,33 +156,35 @@ export default function Header(props) {
             </Card>
 
             <Card className="fGrow">
-                <div className="inner" style={{backgroundColor:"#fccbcb"}}>
-                    <h1>To-do progress stats</h1>
+
+                <div className="rightInner">
+                    <div className="inner">
+                        <h1 className="fontColor">To-do progress stats</h1>
+                    </div>
+
+                    {items.length > 0 ?
+
+
+                        <div className="right">
+
+                            <div className="inner">
+
+                                <h3 className="fontColor">Completion percentage</h3>
+                                <CircularProgressWithLabel value={progress} />
+                                <p className="fontColor">Total tasks completed:{count}/{items.length}</p>
+
+                            </div>
+                            <div className="inner">
+                                <h3 className="fontColor">Remaining tasks percentage</h3>
+                                <CircularProgressWithLabel value={100 - progress} />
+                                <p className="fontColor">Remaining tasks:{items.length - count}</p>
+                            </div>
+                        </div> :
+                        <div className="inner">
+                            <DateRangeIcon style={{ fontSize: 100, color: "black" }} />
+                            <p className="fontColor"> Your progress stats will be shown here.</p>
+                        </div>}
                 </div>
-
-                {items.length > 0 ?
-
-
-                    <div className="right">
-
-                        <div className="inner">
-
-                            <h3>Completion percentage</h3>
-                            <CircularProgressWithLabel value={progress} />
-                            <p>Total tasks completed:{count}/{items.length}</p>
-
-                        </div>
-                        <div className="inner">
-                            <h3>Remaining taks percentage</h3>
-                            <CircularProgressWithLabel value={100 - progress} />
-                            <p>Remaining tasks:{items.length - count}</p>
-                        </div>
-                    </div> :
-                    <div className="inner" style={{backgroundColor:"#fccbcb"}}>
-                        <DateRangeIcon style={{ fontSize: 100 }} />
-                        <p> Your progress stats will be shown here.</p>
-                    </div>}
-
             </Card>
 
 
