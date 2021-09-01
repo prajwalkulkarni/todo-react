@@ -20,8 +20,8 @@ export default function Header(props) {
     const [count, setCount] = useState(0);
     //const [checked, setChecked] = useState(false)
     const [progress, setProgress] = useState(0);
-    const [items, ItemsList] = useState([])
-    const [val, keyVal] = useState(0)
+    const [items, ItemsList] = useState([{key:0,value:"styled component props",checked:false},{key:1,value:"dev tools breakpoint",checked:false}])
+    const [val, keyVal] = useState(2)
 
     const [state, setState] = React.useState({
         open: false,
